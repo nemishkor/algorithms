@@ -3,6 +3,8 @@
 #include <stdlib.h>
 using namespace std;
 
+/* Розробіть алгоритм для задачі пошуку четвірок з нульовою сумою. */
+
 int main(int argc, char *argv[])
 {
     unsigned int arraySize;

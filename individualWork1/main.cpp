@@ -52,9 +52,16 @@ int main(int argc, char *argv[])
 //    percolation.percolates();
 //    percolation.print();
     Timer timer;
-    timer.start();
-    PercolationStats percolationStats(8, 10);
-    timer.end();
-    cout << timer.getInterval() << endl;
+    for (int N = 10; N <= 1000; N*=10) {
+        int T = N;
+        cout << "N = T = " << N << endl;
+        for(int i = 0; i < 100; i++){
+            timer.start();
+            PercolationStats *percolationStats = new PercolationStats(N, T);
+            timer.addStep(timer.getTime());
+            delete percolationStats;
+        }
+        cout << "time = " << timer.getAverageX() << endl;
+    }
     return 0;
 }
